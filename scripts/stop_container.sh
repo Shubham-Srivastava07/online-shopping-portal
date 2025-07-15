@@ -8,3 +8,4 @@
   else
     echo "No running containers to remove."
   fi
+

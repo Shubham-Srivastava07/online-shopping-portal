@@ -119,3 +119,4 @@ export function ShoppingCart() {
         </Offcanvas>
     );
 }
+

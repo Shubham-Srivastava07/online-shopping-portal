@@ -43,3 +43,4 @@ export default function ProductItem({item, onUpdateClickHandler, onDeleteClickHa
         </Card>
     );
 }
+

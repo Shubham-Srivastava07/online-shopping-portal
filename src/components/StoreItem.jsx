@@ -111,3 +111,4 @@ export function StoreItem({ id, name, price, imgUrl, brand, category, descriptio
         </>
     );
 }
+

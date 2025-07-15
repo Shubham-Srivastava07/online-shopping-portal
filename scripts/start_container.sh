@@ -6,3 +6,4 @@
 
   # Run the Docker image as a container
   docker run -d -p 5173:5173 shubham010701/onlineshop:latest
+
