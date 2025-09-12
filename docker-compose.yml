@@ -20,3 +20,4 @@ networks:
   online-shop:
     driver: bridge
 
+# Staging environment configuration
