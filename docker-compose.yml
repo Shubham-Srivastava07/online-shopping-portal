@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  online-shop:
+    build:
+      context: .
+    container_name: online-shopping-app
+    ports:
+      - "80:80"
+    restart: always
+    healthcheck:
+      # 'w-get' ko badal kar 'wget' kar diya aur URL se extra space hata diya
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+    networks:
+      - online-shop
+
+networks:
+  online-shop:
+    driver: bridge
+
