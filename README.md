@@ -100,6 +100,8 @@ Docker Compose is used to
 * Restart containers automatically
 * Simplify deployment using a single command
 
+<img width="1368" height="800" alt="Screenshot (489)" src="https://github.com/user-attachments/assets/746c59bd-76d6-45ee-81bf-ae319d6e2315" />
+
 ---
 
 # 🔄 Jenkins CI/CD Pipeline
@@ -113,6 +115,8 @@ Pipeline Stages
 
 This enables automated application deployment from GitHub to the target server.
 
+<img width="1359" height="800" alt="Screenshot (488)" src="https://github.com/user-attachments/assets/2da1f9b3-6a0b-4158-bfec-0947738b548e" />
+
 ---
 
 # 🌐 Nginx Configuration
@@ -125,9 +129,12 @@ Implemented:
 * SPA Routing using `try_files`
 * Production-ready container deployment
 
+<img width="1363" height="800" alt="Screenshot (487)" src="https://github.com/user-attachments/assets/371a9c22-643e-4b38-8f5e-9bffc3e17332" />
+
+
 ---
 
-# ☁️ Google Cloud Deployment
+# ☁️ Cloud Deployment
 
 The application is deployed on a Google Cloud Platform VM.
 
@@ -152,6 +159,8 @@ Deployment includes:
 * Docker Hub Repository
 * GCP VM
 * Live Website
+  
+<img width="1363" height="800" alt="Screenshot (484)" src="https://github.com/user-attachments/assets/f2393002-4738-4fe4-88b9-272df8390883" />
 
 ---
 
@@ -161,7 +170,7 @@ Deployment includes:
 * Docker Compose Deployment
 * Jenkins CI/CD Pipeline
 * Docker Hub Integration
-* GCP Deployment
+* Deployment
 * DuckDNS Domain Mapping
 * Nginx Production Server
 * SPA Routing Configuration
@@ -178,13 +187,12 @@ Deployment includes:
 
 ---
 
-# 🙏 Acknowledgements
 
-The frontend application used in this repository is based on a learning project created during the **Train With Shubham** program.
 
-The DevOps implementation, containerization, CI/CD pipeline, deployment workflow, project restructuring, and documentation have been independently implemented by **Shubham Srivastava** for learning and portfolio purposes.
+<img width="1359" height="800" alt="Screenshot (485)" src="https://github.com/user-attachments/assets/932aed82-ed80-4039-8983-67fd88fdb611" />
 
----
+
+<img width="1368" height="800" alt="Screenshot (486)" src="https://github.com/user-attachments/assets/545a6cd1-d115-4f3e-b8a1-8cc591860552" />
 
 
 
