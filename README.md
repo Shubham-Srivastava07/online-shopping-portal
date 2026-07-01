@@ -100,7 +100,9 @@ Docker Compose is used to
 * Restart containers automatically
 * Simplify deployment using a single command
 
-<img width="1368" height="800" alt="Screenshot (489)" src="https://github.com/user-attachments/assets/746c59bd-76d6-45ee-81bf-ae319d6e2315" />
+
+<img width="1368" height="754" alt="Screenshot (489)" src="https://github.com/user-attachments/assets/3a561bb1-b53e-4091-b0ad-fc2389dfe37a" />
+
 
 ---
 
@@ -115,7 +117,9 @@ Pipeline Stages
 
 This enables automated application deployment from GitHub to the target server.
 
-<img width="1359" height="800" alt="Screenshot (488)" src="https://github.com/user-attachments/assets/2da1f9b3-6a0b-4158-bfec-0947738b548e" />
+
+<img width="1359" height="754" alt="Screenshot (488)" src="https://github.com/user-attachments/assets/8c840211-0c08-4b6b-b027-a455493255a8" />
+
 
 ---
 
