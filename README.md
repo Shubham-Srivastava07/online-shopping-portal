@@ -1,4 +1,4 @@
-# 🛒 Online Shopping Portal 
+Online Shopping Portal 
 
 A production-style DevOps project demonstrating the complete deployment lifecycle of a React-based Online Shopping Portal.
 
@@ -8,15 +8,15 @@ The primary objective of this project is to implement modern DevOps practices in
 
 ---
 
-# 🚀 Live Demo
 
-### 🌐 Application URL
+
+Application URL
 
 http://shubham-shop.duckdns.org
 
 ---
 
-# 🏗️ Architecture
+Architecture
 
 ```
 Developer
@@ -45,7 +45,7 @@ Developer
       Online Shopping Portal
 ```
 
-# ⚙️ Tech Stack
+Tech Stack
 
 | Category | Technology |
 |-----------|------------|
@@ -61,7 +61,7 @@ Developer
 
 ---
 
-# 📂 Project Structure
+Project Structure
 
 ```
 .
@@ -77,7 +77,7 @@ Developer
 └── package-lock.json
 ```
 
-# 🐳 Docker Implementation
+Docker Implementation
 
 The application is containerized using a **Multi-Stage Docker Build** to separate the build environment from the production environment.
 
@@ -92,11 +92,11 @@ The application is containerized using a **Multi-Stage Docker Build** to separat
 
 ---
 
-# 📦 Docker Compose
+Docker Compose
 
 Docker Compose is used to automate the complete deployment process.
 
-### Features
+Features
 
 - Build Docker Image
 - Create Container
@@ -108,7 +108,7 @@ Docker Compose is used to automate the complete deployment process.
 docker compose up -d --build
 ```
 
-# 🔄 Jenkins CI/CD Pipeline
+Jenkins CI/CD Pipeline
 
 Jenkins is used to automate the complete deployment workflow.
 
@@ -142,7 +142,7 @@ Docker Compose Deployment
 
 ---
 
-# 🐳 Docker Hub
+Docker Hub
 
 The Docker image is automatically pushed to Docker Hub after a successful Jenkins build.
 
@@ -153,7 +153,7 @@ This enables consistent deployments using versioned container images.
 
 ---
 
-# 🌐 Nginx Configuration
+Nginx Configuration
 
 Nginx is used as the production web server.
 
@@ -171,7 +171,7 @@ The custom **nginx.conf** prevents **404 errors** during page refresh by redirec
 
 ---
 
-# Deployment
+Deployment
 
 The application is deployed on a Google Cloud Platform Virtual Machine.
 
@@ -218,7 +218,7 @@ React Application
 
 ---
 
-# 📸 Project Screenshots
+Project Screenshots
 
 
 <img width="1359" height="800" alt="Screenshot (485)" src="https://github.com/user-attachments/assets/e702481e-e305-45af-8898-13a5b2f97a81" />
@@ -230,7 +230,7 @@ React Application
 
 ---
 
-# 📈 Key DevOps Features
+Key DevOps Features
 
 - ✅ Multi-stage Docker Build
 - ✅ Docker Compose Deployment
@@ -246,7 +246,7 @@ React Application
 
 ---
 
-# 💡 Challenges Faced
+Challenges Faced
 
 During this project, I solved several real-world deployment challenges including:
 
@@ -260,7 +260,7 @@ During this project, I solved several real-world deployment challenges including
 
 ---
 
-# 📚 Learning Outcomes
+Learning Outcomes
 
 Through this project, I gained hands-on experience with:
 
