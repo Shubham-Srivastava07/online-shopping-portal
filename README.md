@@ -2,17 +2,9 @@ Online Shopping Portal
 
 A production-style DevOps project demonstrating the complete deployment lifecycle of a React-based Online Shopping Portal.
 
-The application is containerized using Docker with a multi-stage build, orchestrated using Docker Compose, automated through Jenkins CI/CD, and deployed on a Google Cloud Platform (GCP) Virtual Machine using Nginx as the production web server.
+The application is containerized using Docker with a multi-stage build, orchestrated using Docker Compose, automated through Jenkins CI/CD, and deployed on a Google Cloud Platform (GCP) Virtual Machine with Nginx serving as the web server.
 
-The primary objective of this project is to implement modern DevOps practices including containerization, CI/CD automation, cloud deployment, reverse proxy configuration, and production-ready application hosting.
-
----
-
-
-
-Application URL
-
-http://shubham-shop.duckdns.org
+The project demonstrates modern DevOps practices including containerization, CI/CD automation, cloud deployment, Nginx configuration, and automated application hosting.
 
 ---
 
@@ -51,12 +43,11 @@ Tech Stack
 |-----------|------------|
 | Frontend | React (Vite) |
 | Containerization | Docker |
-| Orchestration | Docker Compose |
+| Container Management | Docker Compose |
 | CI/CD | Jenkins |
 | Web Server | Nginx |
 | Cloud Platform | Google Cloud Platform (GCP) |
 | Image Registry | Docker Hub |
-| DNS | DuckDNS |
 | Version Control | Git & GitHub |
 
 ---
@@ -81,10 +72,10 @@ Docker Implementation
 
 The application is containerized using a **Multi-Stage Docker Build** to separate the build environment from the production environment.
 
-### Features
+Features
 
 - Multi-stage Docker Build
-- Production-ready Docker Image
+- Optimized Docker Image
 - Lightweight Nginx Runtime Image
 - Optimized Build using Vite
 - Reduced Final Image Size
@@ -112,7 +103,7 @@ Jenkins CI/CD Pipeline
 
 Jenkins is used to automate the complete deployment workflow.
 
-### Pipeline Stages
+Pipeline Stages
 
 - Checkout Source Code
 - Build Docker Image
@@ -122,7 +113,13 @@ Jenkins is used to automate the complete deployment workflow.
 Pipeline Flow
 
 ```
-GitHub
+GitHub Push
+   │
+   ▼
+Webhook Trigger
+   │
+   ▼
+Jenkins
    │
    ▼
 Checkout
@@ -146,8 +143,7 @@ Docker Hub
 
 The Docker image is automatically pushed to Docker Hub after a successful Jenkins build.
 
-This enables consistent deployments using versioned container images.
-
+Docker images are published with Jenkins build-based version tags alongside the latest tag, enabling traceable and consistent deployments.
 
 <img width="1368" height="754" alt="Screenshot (489)" src="https://github.com/user-attachments/assets/04cdee62-ccf7-465a-bee7-4fd7a1fc7086" />
 
@@ -155,14 +151,13 @@ This enables consistent deployments using versioned container images.
 
 Nginx Configuration
 
-Nginx is used as the production web server.
+Nginx is used as the web server and handles static file serving and SPA routing.
 
-### Implemented
+Implemented
 
 - Static File Hosting
-- Reverse Proxy Configuration
-- SPA Routing using `try_files`
-- Production-ready Configuration
+- SPA Routing using try_files
+- Custom Nginx Configuration
 
 The custom **nginx.conf** prevents **404 errors** during page refresh by redirecting unknown routes back to the application entry point.
 
@@ -173,7 +168,7 @@ The custom **nginx.conf** prevents **404 errors** during page refresh by redirec
 
 Deployment
 
-The application is deployed on a Google Cloud Platform Virtual Machine.
+The application is deployed on a Google Cloud Platform Virtual Machine with automated deployment through Jenkins and Docker Compose.
 
 Deployment includes:
 
@@ -182,19 +177,12 @@ Deployment includes:
 - Jenkins
 - Firewall Configuration
 - Public IP Access
-- DuckDNS Domain Mapping
 - Nginx Deployment
 
 Deployment Flow
 
 ```
 Browser
-     │
-     ▼
-Local DNS
-     │
-     ▼
-DuckDNS
      │
      ▼
 Google Cloud Firewall
@@ -232,17 +220,16 @@ Project Screenshots
 
 Key DevOps Features
 
-- ✅ Multi-stage Docker Build
-- ✅ Docker Compose Deployment
-- ✅ Jenkins CI/CD Pipeline
-- ✅ Docker Hub Integration
-- ✅ Nginx Production Server
-- ✅ SPA Routing Configuration
-- ✅ Google Cloud VM Deployment
-- ✅ DuckDNS Domain Mapping
-- ✅ Health Check Configuration
-- ✅ Custom Docker Network
-- ✅ Production-ready Containerization
+-  Multi-stage Docker Build
+-  Docker Compose Deployment
+-  Jenkins CI/CD Pipeline
+-  Docker Hub Integration
+-  Nginx web Server
+-  SPA Routing Configuration
+-  Google Cloud VM Deployment
+-  Health Check Configuration
+-  Custom Docker Network
+-  Optimized Containerization
 
 ---
 
@@ -250,10 +237,9 @@ Challenges Faced
 
 During this project, I solved several real-world deployment challenges including:
 
-- Understanding Multi-stage Docker Builds
+- Designing Multi-stage Docker Builds
 - Building Production Images using Vite
 - Configuring Nginx for SPA Routing
-- Mapping DuckDNS with GCP VM
 - Configuring Google Cloud Firewall Rules
 - Creating an Automated Jenkins CI/CD Pipeline
 - Deploying Docker Containers on Cloud Infrastructure
@@ -273,7 +259,7 @@ Through this project, I gained hands-on experience with:
 - Docker Hub
 - Production Deployment Workflow
 - Cloud Networking
-- DNS Mapping
+
 
 ---
 
