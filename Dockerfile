@@ -1,6 +1,6 @@
 # Stage 1- builder
 
-FROM public.ecr.aws/docker/library/node:22-alpine AS builder
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN npm run build
 
 # Stage2- prod
 
-FROM public.ecr.aws/docker/library/nginx:alpine
+FROM nginx:alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
