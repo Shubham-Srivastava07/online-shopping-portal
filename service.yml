@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopping-portal-service
+  namespace: shopping-portal
+
+spec:
+  type: LoadBalancer
+
+  selector:
+    app: shopping-portal
+
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP

@@ -1,30 +1,42 @@
-EKS deployment orchestration iteration 1 on day 05
-EKS deployment orchestration iteration 2 on day 05
-EKS deployment orchestration iteration 1 on day 06
-EKS deployment orchestration iteration 2 on day 06
-EKS deployment orchestration iteration 1 on day 07
-EKS deployment orchestration iteration 2 on day 07
-EKS deployment orchestration iteration 1 on day 08
-EKS deployment orchestration iteration 2 on day 08
-EKS deployment orchestration iteration 1 on day 09
-EKS deployment orchestration iteration 2 on day 09
-EKS deployment orchestration iteration 1 on day 10
-EKS deployment orchestration iteration 2 on day 10
-EKS deployment orchestration iteration 1 on day 11
-EKS deployment orchestration iteration 2 on day 11
-EKS deployment orchestration iteration 1 on day 12
-EKS deployment orchestration iteration 2 on day 12
-EKS deployment orchestration iteration 1 on day 13
-EKS deployment orchestration iteration 2 on day 13
-EKS deployment orchestration iteration 1 on day 14
-EKS deployment orchestration iteration 2 on day 14
-EKS deployment orchestration iteration 1 on day 15
-EKS deployment orchestration iteration 2 on day 15
-EKS automation iteration 05
-EKS automation iteration 06
-EKS automation iteration 07
-EKS automation iteration 08
-EKS automation iteration 09
-EKS automation iteration 10
-EKS automation iteration 11
-EKS automation iteration 12
+```yaml
+version: 0.2
+
+env:
+  parameter-store:
+    ECR_URI: "/shopping-portal/ecr/uri"
+
+  variables:
+    AWS_REGION: "eu-west-1"
+
+phases:
+  install:
+    commands:
+      - echo Installing kubectl...
+      - 'curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"'
+      - chmod +x ./kubectl
+      - mv ./kubectl /usr/local/bin/
+
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - 'ECR_REPO_URI="${ECR_URI%:*}"'
+      - echo "ECR repository configured"
+      - 'aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_REPO_URI'
+      - 'COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_COMMIT_ID | cut -c 1-7)'
+      - 'IMAGE_TAG=${COMMIT_HASH:-latest}'
+      - 'echo "Image tag: $IMAGE_TAG"'
+
+  build:
+    commands:
+      - echo Building Docker Image...
+      - 'docker build -t $ECR_REPO_URI:latest .'
+      - 'docker tag $ECR_REPO_URI:latest $ECR_REPO_URI:$IMAGE_TAG'
+
+  post_build:
+    commands:
+      - echo Pushing Docker Image to ECR...
+      - 'docker push $ECR_REPO_URI:latest'
+      - 'docker push $ECR_REPO_URI:$IMAGE_TAG'
+      - echo Build Successfully Finished!
+```
+
