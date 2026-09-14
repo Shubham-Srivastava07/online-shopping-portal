@@ -1,4 +1,3 @@
-```yaml
 version: 0.2
 
 env:
@@ -35,8 +34,14 @@ phases:
   post_build:
     commands:
       - echo Pushing Docker Image to ECR...
-      - 'docker push $ECR_REPO_URI:latest'
-      - 'docker push $ECR_REPO_URI:$IMAGE_TAG'
-      - echo Build Successfully Finished!
-```
+      - docker push $ECR_REPO_URI:latest
+      - docker push $ECR_REPO_URI:$IMAGE_TAG
+      - echo Updating kubeconfig for EKS Cluster...
+      - aws eks update-kubeconfig --region $AWS_REGION --name online-shopping-cluster
+      - echo Applying Kubernetes manifests...
+      - kubectl apply -f namespace.yml
+      - kubectl apply -f deployment.yml
+      - kubectl apply -f service.yml
+      - echo Build and Deployment Completed Successfully!
+
 
